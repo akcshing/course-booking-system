@@ -10,8 +10,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "courses")
-
-
 public class Course {
 
     @Column(name = "name")
@@ -27,13 +25,12 @@ public class Course {
 
     @JsonIgnoreProperties("courses")
     @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
-
     private List<Booking> bookings;
 
 
-    public void Course(){}
+    public Course(){}
 
-    public void Course(String name, String town, int starRating){
+    public Course(String name, String town, int starRating){
         this.name = name;
         this.town =town;
         this.starRating = starRating;
